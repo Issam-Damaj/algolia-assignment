@@ -137,13 +137,21 @@ function renderResults(results) {
     )
     .join("");
 
-  DOM.hits.innerHTML = results.page === 0
-    ? html
-    : DOM.hits.innerHTML + html;
+if (results.page === 0) {
+  DOM.hits.innerHTML = html;
+} else {
+  DOM.hits.insertAdjacentHTML("beforeend", html);
+}
 
+const hasMorePages = results.page < results.nbPages - 1;
+
+if (results.nbPages <= 1 || !hasMorePages) {
+  DOM.showMore.style.display = "none";
+} else {
   DOM.showMore.style.display = "block";
-  DOM.showMore.disabled = results.page >= results.nbPages - 1;
+  DOM.showMore.disabled = false;
   DOM.showMore.innerText = "Show More";
+}
 }
 
 function renderStats(results) {

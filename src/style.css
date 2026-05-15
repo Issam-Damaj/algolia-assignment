@@ -625,6 +625,12 @@ table {
 
 /* MOBILE FIXES — DO NOT AFFECT DESKTOP */
 @media (max-width: 767px) {
+.page__content,
+.filter,
+.results {
+  float: none !important;
+  width: 100% !important;
+}
 
   /* Make container full height and remove desktop box */
   .page__container {

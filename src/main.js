@@ -323,3 +323,31 @@ function renderFacetStars(rating) {
     }">★</span>`;
   }).join("");
 }
+
+
+
+const filterToggle = document.querySelector('.mobile-filter-toggle');
+const filterPanel = document.querySelector('.filter');
+
+let overlay = document.createElement('div');
+overlay.classList.add('filter-overlay');
+document.body.appendChild(overlay);
+
+filterToggle.addEventListener('click', () => {
+  filterPanel.classList.add('open');
+  overlay.classList.add('show');
+});
+
+overlay.addEventListener('click', () => {
+  filterPanel.classList.remove('open');
+  overlay.classList.remove('show');
+});
+
+// Close drawer when any filter label is clicked (works with Algolia dynamic DOM)
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.filter__label')) {
+    filterPanel.classList.remove('open');
+    overlay.classList.remove('show');
+  }
+});
+

@@ -178,6 +178,7 @@ table {
     max-height: 430px;
     margin-bottom: 0;
   }
+
 }
 .filter__header {
   -moz-osx-font-smoothing: grayscale;
@@ -681,5 +682,66 @@ table {
 
   .result__summary {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+
+  .mobile-filter-toggle {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #1c688e;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  /* Make filter a floating drawer */
+  .filter {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 80%;
+    height: 100%;
+    background: white;
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    border-right: 1px solid #ddd;
+  }
+
+  /* When open */
+  .filter.open {
+    left: 0;
+  }
+
+  /* Dim background when filter is open */
+  .filter-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 9998;
+  }
+
+  .filter-overlay.show {
+    display: block;
+  }
+}
+/* Hide filter toggle on desktop */
+.mobile-filter-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-filter-toggle {
+    display: block;
   }
 }

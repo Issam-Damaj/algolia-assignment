@@ -354,7 +354,11 @@ table {
 .page {
   width: 100%;
   height: 100vh;
+<<<<<<< HEAD
   background: url("/images/background.png");
+=======
+background: url("/images/background.png");
+>>>>>>> 6aa866da62b1bcd28d968eb7952ff2d2b789f8ae
   background-color: #dddddd;
 }
 @media only screen and (min-resolution: 200dpi) {

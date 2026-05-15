@@ -3,7 +3,7 @@
 A custom restaurants search experience built with Vanilla JavaScript and Algolia APIs to demonstrate the benefits of a fast, intuitive, and highly customizable search experience.
 
 This project was built as part of the Algolia Senior Solutions Engineer assignment and focuses on:
-- Search UX
+- Search UX & relevance
 - Data indexing and normalization
 - Custom search state management
 - Geolocation-based ranking
@@ -12,31 +12,39 @@ This project was built as part of the Algolia Senior Solutions Engineer assignme
 
 ---
 
+# GitHub Repo
+The project source code under GitHub Repo.
+Repo Url:
+https://github.com/Issam-Damaj/algolia-assignment.git
+
+---
+
 # Deployment
 The project deployed using GitHub Pages.
 Live Demo:
-[ADD_GITHUB_PAGES_LINK_HERE]
+https://issam-damaj.github.io/algolia-assignment/
 
 ---
 
 # Features
 ## Search Experience
 - As-you-type search
-- Debounced search requests
+- Debounced requests to reduce API calls
 - Highlighted search results
 - Pagination with "Show More"
 - Search statistics
 - Empty state handling
-- Responsive UI
-- Simple URL state synchronization
+- Responsive layout
+- Basic URL state synchronization
 
 ## Filters
-- Cuisine / Food Type filtering
-- Payment Options filtering
-- Rating filtering
+- Cuisine / Food Type
+- Payment Options
+- Rating
+- Mobile‑friendly sliding filter panel
 
 ## Geolocation
-- Uses browser geolocation to prioritize nearby restaurants
+- Uses browser geolocation to prioritize nearby restaurants  (when allowed)
 
 ## Data Pipeline
 - Merges JSON and CSV datasets using `objectID`
@@ -59,6 +67,7 @@ Responsible for:
 - Pagination
 - Geolocation search behavior
 - Custom UI interactions
+- Mobile filter drawer
 
 ## 2. ETL / Indexing Pipeline
 Built with Node.js.
@@ -80,7 +89,7 @@ Responsible for:
 - HTML/CSS
 
 ## Tooling
-- Parcel
+- Vite
 
 ## Backend / Indexing
 - Node.js
@@ -91,11 +100,15 @@ Responsible for:
 
 # Project Structure
 project/
-├── .env.example
-├── package.json
 ├── index.html
-├── index.js
-├── index.css
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── .env.example
+│
+├── src/
+│   ├── main.js
+│   └── style.css
 │
 ├── scripts/
 │   └── indexing.js
@@ -104,7 +117,14 @@ project/
 │   ├── restaurants_list.json
 │   └── restaurants_info.csv
 │
-└── assets/
+├── public/
+│   └── (static assets)
+│
+├── assets/
+│   └── images, icons, backgrounds
+│
+└── docs/
+    └── (GitHub Pages deployment output)
 
 ---
 
@@ -119,7 +139,10 @@ Create a `.env` file at the project root based on `.env.example`.
 npm run index
 
 ## Start Frontend Development Server
-npm start
+npm run dev
+
+# Build for deployment
+npm run build
 
 ## Algolia Index Settings
 The ETL pipeline configures the following settings:
@@ -157,5 +180,4 @@ American Express --> AMEX
 Query suggestions / autocomplete
 Search analytics insights
 Full URL state synchronization
-Accessibility improvements
-Skeleton loading states
+Sorting functionality

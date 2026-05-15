@@ -467,6 +467,23 @@ table {
   color: #a9a9a9;
 }
 
+.result__rating_half {
+  position: relative;
+  display: inline-block;
+  color: #a9a9a9; /* empty star color */
+}
+
+.result__rating_half::before {
+  content: "★";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* half fill */
+  overflow: hidden;
+  color: #ffab66; /* active star color */
+}
+
+
 .results {
   float: left;
   width: 100%;

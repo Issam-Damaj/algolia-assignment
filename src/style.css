@@ -354,11 +354,7 @@ table {
 .page {
   width: 100%;
   height: 100vh;
-<<<<<<< HEAD
   background: url("/images/background.png");
-=======
-background: url("/images/background.png");
->>>>>>> 6aa866da62b1bcd28d968eb7952ff2d2b789f8ae
   background-color: #dddddd;
 }
 @media only screen and (min-resolution: 200dpi) {
@@ -624,4 +620,60 @@ background: url("/images/background.png");
   margin-top: 4px;
   font-size: 12px;
   color: #666;
+}
+
+
+/* MOBILE FIXES — DO NOT AFFECT DESKTOP */
+@media (max-width: 767px) {
+
+  /* Make container full height and remove desktop box */
+  .page__container {
+    position: static;
+    height: auto;
+    max-height: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Stack filter + results vertically */
+  .page__content {
+    display: block;
+    padding: 0 12px;
+  }
+
+  /* Filter full width */
+  .filter {
+    width: 100%;
+    max-height: none;
+    border-right: none;
+    margin-bottom: 20px;
+  }
+
+  /* Results full width */
+  .results {
+    width: 100%;
+    max-height: none;
+    padding: 0;
+    overflow-y: visible;
+  }
+
+  /* Search bar spacing */
+  .search-bar__container {
+    padding: 14px;
+  }
+
+  /* Result card layout */
+  .result__image-container {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+
+  .result__title {
+    font-size: 15px;
+  }
+
+  .result__summary {
+    font-size: 13px;
+  }
 }

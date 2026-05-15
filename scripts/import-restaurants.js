@@ -2,17 +2,16 @@ import fs from "fs";
 import csv from "csv-parser";
 import algoliasearch from "algoliasearch";
 import dotenv from "dotenv";
-dotenv.config({ path: "../.env" });
+dotenv.config({
+    path: "../.env"
+});
 // 1. Algolia setup
 const client = algoliasearch(
-  process.env.ALGOLIA_APP_ID,
-  process.env.ALGOLIA_ADMIN_KEY
-);
+        process.env.ALGOLIA_APP_ID,
+        process.env.ALGOLIA_ADMIN_KEY);
 
 const index = client.initIndex(
-  process.env.ALGOLIA_INDEX_NAME
-);
-
+        process.env.ALGOLIA_INDEX_NAME);
 
 // 2. Helpers
 function safeNumber(value, fallback = 0) {

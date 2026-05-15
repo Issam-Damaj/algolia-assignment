@@ -111,7 +111,7 @@ project/
 │   └── style.css
 │
 ├── scripts/
-│   └── indexing.js
+│   └── import-restaurants.js
 │
 ├── dataset/
 │   ├── restaurants_list.json
@@ -136,7 +136,7 @@ npm install
 Create a `.env` file at the project root based on `.env.example`.
 
 ## Run Indexing Pipeline
-npm run index
+npm run import-data
 
 ## Start Frontend Development Server
 npm run dev

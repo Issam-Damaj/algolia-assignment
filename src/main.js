@@ -109,6 +109,7 @@ function renderResults(results) {
   const noResultsTemplate =
     document.getElementById("no-results-template").innerHTML;
 
+
   if (results.nbHits === 0) {
     DOM.hits.innerHTML = noResultsTemplate.replace(
       "{{query}}",
@@ -262,10 +263,10 @@ function attachRatingListeners(container, activeRating) {
 
  //  9. GEOLOCATION
 function initGeoSearch() {
-    if (!navigator.geolocation) {
-        helper.search();
-        return;
-    }
+  if (!navigator.geolocation) {
+    helper.setQueryParameter("aroundLatLng", undefined).search();
+    return;
+  }
 
   navigator.geolocation.getCurrentPosition(
     (pos) => {
@@ -273,10 +274,13 @@ function initGeoSearch() {
 
       helper
         .setQueryParameter("aroundLatLng", `${latitude},${longitude}`)
-        .setQueryParameter("aroundRadius", "10000")
         .search();
     },
-    () => helper.search()
+    () => {
+      helper
+        .setQueryParameter("aroundLatLng", undefined)
+        .search();
+    }
   );
 }
 

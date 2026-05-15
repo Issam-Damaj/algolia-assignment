@@ -615,3 +615,9 @@ table {
 #stats {
   color: #000;
 }
+.result__distance {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #666;
+}

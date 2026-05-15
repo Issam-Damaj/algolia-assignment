@@ -1,3 +1,5 @@
-export default {
-  base: '/algolia-final/',
-};
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/algolia-assignment/',
+})

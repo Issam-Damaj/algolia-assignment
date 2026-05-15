@@ -334,3 +334,11 @@ document.addEventListener('click', (e) => {
         overlay.classList.remove('show');
     }
 });
+const filterCloseBtn = document.querySelector('.filter-close-btn');
+
+if (filterCloseBtn) {
+  filterCloseBtn.addEventListener('click', () => {
+    filterPanel.classList.remove('open');
+    overlay.classList.remove('show');
+  });
+}

@@ -765,3 +765,22 @@ table {
     display: block;
   }
 }
+/* Mobile filter close button */
+.filter-close-btn {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .filter-close-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #1c688e;
+    color: white;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: left;
+  }
+}
